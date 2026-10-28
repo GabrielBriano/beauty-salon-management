@@ -1,0 +1,19 @@
+@BeautySalonAPI_HostAddress = https://localhost:7244
+
+### Lojas públicas
+GET {{BeautySalonAPI_HostAddress}}/api/public/tenants
+Accept: application/json
+
+### Serviços de uma loja (público)
+GET {{BeautySalonAPI_HostAddress}}/api/loja-centro/service
+Accept: application/json
+
+### Login
+POST {{BeautySalonAPI_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{ "email": "admin@exemplo.com", "password": "SUA_SENHA" }
+
+### Estoque (exige token)
+GET {{BeautySalonAPI_HostAddress}}/api/stock
+Authorization: Bearer {{token}}
